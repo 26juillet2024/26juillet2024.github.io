@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>...</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/flipdown.min.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div id="defi">
+        <p>
+          Pour commencer, on a bien envie de revenir sur votre rencontre.
+        </p>
+        <p>
+          Vous en souvenez-vous ?
+        </p>
+        <p>
+          <br />
+          Prouvez-le nous en la partageant avec nous !!
+        </p>
+        <p>
+          <em>Indice: utilisez vos talents</em>
+        </p>
+        <p>
+          <br />
+          Psssit, vous avez 48h et le chrono est déjà lancé !
+        </p>
+      </div>
+      <br />
+      <br />
+      <div id="fini">Temps écoulé, défi terminé !!</div>
+      <div id="flipdown" class="flipdown"></div>
+    </div>
+    <script type="text/javascript" src="js/flipdown.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const d28012023 = 1674932400;
+        const now = (new Date().getTime() / 1000) + 1;
+
+        // Si depasse
+        if(now - d28012023 > 0) {
+          document.getElementById('fini').style.display = 'block';
+        }
+        else {
+          // Set up FlipDown
+          var flipdown = new FlipDown(d28012023, {
+            headings: ["Jours", "Heures", "Minutes", "Secondes"],
+          })
+            // Start the countdown
+            .start()
+            // Do something when the countdown ends
+            .ifEnded(() => {
+              console.log('C\'est fini !');
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

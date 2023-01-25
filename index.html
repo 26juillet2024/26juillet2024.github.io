@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>...</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div id="login" class="page">
+        <form id="login-form">
+            <p>
+                Et oui, le compte à rebours a démarré... Dans 18 mois vous serez mariés !
+            </p>
+            <p>
+                Mais en attendant, nous on est au taquet ! Et vous ?
+            </p>
+            <p>
+                Allez, à vos marques, prêts, feu, partez !
+            </p>
+            <p>
+                <br />
+                <small>Pour poursuivre, saisissez le mot de passe: </small>
+            </p>
+            <input type="password" id="pass" />
+            <br />
+            <br />
+            <input type="submit" value=" Go ? " id="submit" />
+        </form>
+    </div>
+    <script type="text/javascript" src="js/sha1.js"></script>
+    <script type="text/javascript">
+        const test = function(e) {
+            const pass = document.getElementById("pass");
+            const hash = sha1(pass.value);
+            const xhttp = new XMLHttpRequest();
+            const page = "/"+hash+".html";
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                        window.location.replace(page);
+                }
+            };
+            xhttp.open("GET", page, true);
+            xhttp.send();
+
+            event.preventDefault();
+            return false;
+        };
+
+        window.onload = function() {
+            const loginForm = document.getElementById("login-form");
+            loginForm.addEventListener("submit", test);            
+        };
+    </script>
+  </body>
+</html>

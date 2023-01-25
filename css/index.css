@@ -1,0 +1,20 @@
+div {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page {
+    margin-top: 200px;
+}
+
+#login-form, #defi {
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#fini {
+    display: none;
+    font-size: 26px;
+    color:crimson;
+    font-weight: bold;
+}
