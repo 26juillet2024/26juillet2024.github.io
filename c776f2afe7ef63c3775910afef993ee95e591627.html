@@ -5,38 +5,45 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/flipdown.min.css" />
+    <style>
+      .multicolor-text {
+          font-size: 40px;
+          background: linear-gradient(to left,
+                  violet,
+                  indigo,
+                  blue,
+                  green,
+                  yellow,
+                  orange,
+                  red);
+          -webkit-background-clip: text;
+          color: transparent;
+      }
+  </style>
   </head>
   <body>
     <div class="page">
       <div id="defi">
         <p>
-          Pour commencer, on a bien envie de revenir sur votre rencontre...
+          Selon vos dires, nous avons commencé fort, mais vous aussi. Vous avez accompli vos 2 premiers 
+          défis avec brio et astuce.
         </p>
         <p>
-          Vous en souvenez-vous ?
+          Saurez-vous encore nous étonner avec ce nouveau thème ?
         </p>
-        <p>
+        <p class="multicolor-text">
           <br />
-          Prouvez-le nous en la partageant avec nous !!
-        </p>
-        <p>
-          <em>Indice: utilisez vos talents</em>
-        </p>
-        <p>
-          <br />
-          Psssit, vous avez 72h et le chrono est déjà lancé !
+          L'adolescence est une période où l'on se cherche, retrouvez vos look d'antan !
         </p>
       </div>
       <br />
       <br />
       <div id="fini">Temps écoulé, défi terminé !!</div>
       <div id="flipdown" class="flipdown"></div>
-
-    </div>
     <script type="text/javascript" src="js/flipdown.min.js"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', () => {
-        const target = 1675018800;
+        const target = 1679256000;
         const now = (new Date().getTime() / 1000) + 1;
 
         // Si depasse
