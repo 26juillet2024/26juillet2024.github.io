@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>...</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/flipdown.min.css" />
+    <style>
+      .text {
+          font-size: 40px;
+          color: #297791;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="defi">
+        <p>
+          Nous voici de retour !
+        </p>
+        <p>
+          Pour ce nouveau défi, nous vous proposons une petite séquence émotion...
+        </p>
+        <p>
+          <br />
+          <span class="text">
+            Racontez-nous vos parrainages
+          </span>
+          &#x1F970;
+        </p>
+      </div>
+      <br />
+      <br />
+      <div id="fini">Temps écoulé, défi terminé !!</div>
+      <div id="flipdown" class="flipdown"></div>
+    <script type="text/javascript" src="js/flipdown.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = 1687809600; // https://www.epochconverter.com/
+        const now = (new Date().getTime() / 1000) + 1;
+
+        // Si depasse
+        if(now - target > 0) {
+          document.getElementById('fini').style.display = 'block';
+        }
+        else {
+          // Set up FlipDown
+          var flipdown = new FlipDown(target, {
+            headings: ["Jours", "Heures", "Minutes", "Secondes"],
+          })
+            // Start the countdown
+            .start()
+            // Do something when the countdown ends
+            .ifEnded(() => {
+              console.log('C\'est fini !');
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
