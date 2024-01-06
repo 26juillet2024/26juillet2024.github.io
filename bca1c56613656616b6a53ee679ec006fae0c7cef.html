@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>...</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/flipdown.min.css" />
+    <style>
+      .text {
+          font-size: 40px;
+          color: #297791;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="defi">
+        <p>
+          Nouvelle année, nouveau défi !
+        </p>
+        <p>
+          Vous le savez, vos témoins et demoiselles d'honneur sont plutôt du genre... gourmands !!
+        </p>
+        <p>
+          Alors voici votre défi pour ce mois de janvier: 
+        </p>
+        <p>
+          <br />
+          👑
+          <br />
+          <span class="text">
+            Allez emporter la galette des rois <br />
+            chez tous vos témoins/demoiselles d'honneur à tour de rôle.
+          </span>
+          <br />
+          👑
+        </p>
+        <p>
+          Régalades et bons moments en perspective !! 😋
+        </p>
+      </div>
+      <br />
+      <br />
+      <div id="fini">Temps écoulé, défi terminé !!</div>
+      <div id="flipdown" class="flipdown"></div>
+    <script type="text/javascript" src="js/flipdown.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = 1706745599; // https://www.epochconverter.com
+        const now = (new Date().getTime() / 1000) + 1;
+
+        // Si depasse
+        if(now - target > 0) {
+          document.getElementById('fini').style.display = 'block';
+        }
+        else {
+          // Set up FlipDown
+          var flipdown = new FlipDown(target, {
+            headings: ["Jours", "Heures", "Minutes", "Secondes"],
+          })
+            // Start the countdown
+            .start()
+            // Do something when the countdown ends
+            .ifEnded(() => {
+              console.log('C\'est fini !');
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
