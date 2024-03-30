@@ -18,7 +18,6 @@
         font-style: normal;
         font-weight: 450;
         font-size: calc(15px + 0.390625vw);
-        margin-top: 40px;
       }
 
       input {
@@ -63,7 +62,7 @@
           Rendez-vous à ce panneau pour démarrer la chasse au trésor!
           <br />
           <br />
-          <img src="images/paques/01_panneau.jpeg" width="400" />
+          <img src="images/paques/01_panneau.jpeg" width="300" />
           <br />
           <br />
           <button id="start"> On commence ! </button>
@@ -104,7 +103,7 @@
           <br />
           <br />
           <button class="valid" id="valid-1"> Valider </button>
-          <span class="result" id="result-ko-1"> 😕 </span>
+          <span class="result" id="result-ko-1"> Oups 😱 </span>
           <span class="result" id="result-ok-1"> 👏 Bravo !! </span>
           <br />
           <br />
@@ -124,11 +123,153 @@
           <br />
           <br />
           <button class="valid" id="valid-2"> Valider </button>
-          <span class="result" id="result-ko-2"> 😕 </span>
-          <span class="result" id="result-ok-2"> 💪💪💪 </span>
+          <span class="result" id="result-ko-2"> Recomptez... 😕 </span>
+          <span class="result" id="result-ok-2"> Bien vu ! 💪💪💪 </span>
           <br />
           <br />
           <span class="next" id="next-2"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Vous l'avez remarqué? Il se voit de loin…
+          <br />
+          <br />
+          Rejoignez ce gorille un peu particulier!
+          <br />
+          <br />
+          Arrivé à ses pieds vous compterez combien il y a d'arbres sur cette île?
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-3" />
+          <br />
+          <br />
+          <button class="valid" id="valid-3"> Valider </button>
+          <span class="result" id="result-ko-3"> Oups 😱😱 </span>
+          <span class="result" id="result-ok-3"> Oui ! 😃 </span>
+          <br />
+          <br />
+          <span class="next" id="next-3"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Après être sorti de la passerelle, vous continuerez votre parcours sur la gauche.
+          <br />
+          <br />
+          Ce magnifique parc est aussi une représentation de la nature.
+          <br />
+          <br />
+          Sur votre gauche, vous pourrez remarquer une scenette de chasse.
+          <br />
+          <br />
+          Combien d'animaux la composent?
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-4" />
+          <br />
+          <br />
+          <button class="valid" id="valid-4"> Valider </button>
+          <span class="result" id="result-ko-4"> Non 👎🙊 </span>
+          <span class="result" id="result-ok-4"> Yes ! 💪💪💪 </span>
+          <br />
+          <br />
+          <span class="next" id="next-4"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Continuez environ 70m en longeant sur votre droite, vous allez arriver sur le cimetière des moines qui habitaient encore ce château il y a quelques années, avant que celui-ci ne soit racheté par le groupe Legendre.
+          <br />
+          <br />
+          Le nom "Château des Pères" vient de cette période d'ailleurs.
+          <br />
+          <br />
+          A gauche de l'entrée du cimetière se trouve une statue avec une citation: comptez le nombre de voyelles?
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-5" />
+          <br />
+          <br />
+          <button class="valid" id="valid-5"> Valider </button>
+          <span class="result" id="result-ko-5"> Non 😟😠  </span>
+          <span class="result" id="result-ok-5"> Bravo ! 😃🚀 </span>
+          <br />
+          <br />
+          <span class="next" id="next-5"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Profitez de ce beau panorama à votre droite pour nous envoyer un beau selfie de famille. 📷
+          <br />
+          <br />
+          Continuez votre chemin jusqu'à trouver cette statue.
+          <br />
+          <br />
+          <img src="images/paques/02_statue.png" width="300px" />
+          <br />
+          <br />
+          Combien y a t'il de lettres de gravées dessus?
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-6" />
+          <br />
+          <br />
+          <button class="valid" id="valid-6"> Valider </button>
+          <span class="result" id="result-ko-6"> Non 👎🙊 </span>
+          <span class="result" id="result-ok-6"> Oui ! ⭐⭐⭐ </span>
+          <br />
+          <br />
+          <span class="next" id="next-6"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Continuez votre chemin jusqu'à ce point bleu sur la photo.
+          <br />
+          <br />
+          <img src="images/paques/03_plan.png" width="300px" />
+          <br />
+          <br />
+          Regardez en direction du château.
+          <br />
+          <br />
+          Qu'est ce qui est représenté sur la fresque?
+          <ul>
+            <li>1 - Des poissons</li>
+            <li>2 - Des sirènes</li>
+            <li>3 - Des coquillages</li>
+          </ul>
+          <br />
+          (répondre 1, 2 ou 3)
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-7" />
+          <br />
+          <br />
+          <button class="valid" id="valid-7"> Valider </button>
+          <span class="result" id="result-ko-7"> Ohhh... 😟😠 </span>
+          <span class="result" id="result-ok-7"> Bravo ! 🧜‍♀️ </span>
+          <br />
+          <br />
+          <span class="next" id="next-7"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Vous y êtes presque: le trésor de notre première partie est aux alentours de cette photo!
+          <br />
+          <br />
+          <img src="images/paques/04_louka1.png" width="300px" />
+          <br />
+          <br />
+          Vous l'avez trouvé? alors inscrivez le code ici (chiffres et lettres majuscules):
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-8" />
+          <br />
+          <br />
+          <button class="valid" id="valid-8"> Valider </button>
+          <span class="result" id="result-ko-8"> Mince 😕 </span>
+          <span class="result" id="result-ok-8"> Ouiii ! ⭐⭐⭐⭐⭐ </span>
+          <br />
+          <br />
+          <span class="next" id="next-8"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Maintenant, regardez autour de ce lieu:
+          <br />
+          <br />
+          <img src="images/paques/05_louka2.png" width="300px" />
         </div>
       </div>
     </div>
