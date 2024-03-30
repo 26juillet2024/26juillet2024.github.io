@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title> Pâques </title>
+    <meta charset="UTF-8">
+    <link
+      rel="stylesheet"
+      href="css/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@469&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: "Reddit Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 450;
+        font-size: calc(15px + 0.390625vw);
+        margin-top: 40px;
+      }
+
+      input {
+        font-family: "Reddit Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 450;
+        font-size: calc(15px + 0.390625vw);
+        width: 300px;
+        padding: 5px;
+      }
+
+      button {
+        font-family: "Reddit Mono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 450;
+        font-size: calc(15px + 0.390625vw);
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: grab;
+      }
+
+      .swiper {
+        width: 600px;
+        height: 700px;
+      }
+
+      .result {
+        display: none;
+        font-size: calc(30px + 0.390625vw);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          Rendez-vous à ce panneau pour démarrer la chasse au trésor!
+          <br />
+          <br />
+          <img src="images/_paques/01_panneau.jpeg" width="400" />
+          <br />
+          <br />
+          <button id="start"> On commence ! </button>
+        </div>
+        <div class="swiper-slide">
+          Marchez 30m en direction du parc.
+          <br />
+          <br />
+          Vous remarquez cette grande tour, quelques insectes bizarres s'y sont accrochés.
+          <br />
+          <br />
+          Comptez le nombre de fenêtres…
+          <br />
+          <br />
+          Et venez inscrire la réponse ici:
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-0" />
+          <br />
+          <br />
+          <button class="valid" id="valid-0"> Valider </button>
+          <span class="result" id="result-ko-0"> Zut 🙁 </span>
+          <span class="result" id="result-ok-0"> Bravo ! 👏 </span>
+          <br />
+          <br />
+          <span class="next" id="next-0"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Entrez dans le parc, il est original ce portrait de femme…
+          <br />
+          <br />
+          Christophe Milcent est un artiste qui utilise une matière en particulier, laquelle?
+          <br />
+          (un seul mot en minuscule)
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-1" />
+          <br />
+          <br />
+          <button class="valid" id="valid-1"> Valider </button>
+          <span class="result" id="result-ko-1"> 😕 </span>
+          <span class="result" id="result-ok-1"> 👏 Bravo !! </span>
+          <br />
+          <br />
+          <span class="next" id="next-1"><a href="#">Suivant ⇨ </a></span>
+        </div>
+        <div class="swiper-slide">
+          Continuons notre lancée, en avançant encore un peu plus dans le parc vous pourrez remarquer plusieurs personnages.
+          <br />
+          <br />
+          Vous vous arrêterez sur cette multi tête taillée sur une pierre.
+          <br />
+          <br />
+          Combien d'yeux comptez-vous?
+          <br />
+          <br />
+          <input type="text" class="responses" id="resp-2" />
+          <br />
+          <br />
+          <button class="valid" id="valid-2"> Valider </button>
+          <span class="result" id="result-ko-2"> 😕 </span>
+          <span class="result" id="result-ok-2"> 💪💪💪 </span>
+          <br />
+          <br />
+          <span class="next" id="next-2"><a href="#">Suivant ⇨ </a></span>
+        </div>
+      </div>
+    </div>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+      const responses = [24, 'acier', 3, 5, 4, 4, 12, 2, 'PSS3TD3506'];
+      const prefixResp = "resp-";
+      const prefixResOk = "result-ok-";
+      const prefixResKo = "result-ko-";
+      const prefixNext = "next-";
+
+      const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        allowTouchMove: false,
+      });
+
+      // Start button events
+      document.getElementById("start").addEventListener("click", function() {
+        swiper.slideNext();
+      });
+
+      initEvents();
+
+      /**
+       * Hide results.
+       */
+      function hideResults(index) {
+        document.getElementById(prefixResOk+index).style.display = "none";
+        document.getElementById(prefixResKo+index).style.display = "none";
+      }
+
+      /**
+       * Initialisation des evenements.
+       */
+      function initEvents() {
+        const nexts = document.getElementsByClassName('next');
+
+        for (let i = 0; i < nexts.length; i++) {
+          let element = nexts[i];
+          element.style.display = "none";
+          element.addEventListener("click", function() {
+              swiper.slideNext();
+          });
+        }
+
+        // Validate response
+        const valids = document.getElementsByClassName('valid');
+
+        for (let i = 0; i < valids.length; i++) {
+          let element = valids[i];
+          element.addEventListener("click", function(elem) {
+            const buttonId = elem.target.id;
+            const questionIndex = buttonId.substring(6);
+
+            const response = document.getElementById(prefixResp+questionIndex).value;
+            const expected = responses[questionIndex];
+
+            hideResults(questionIndex);
+
+            // Check results
+            if(response == expected) {
+              document.getElementById(prefixResOk+questionIndex).style.display = "inline";
+              document.getElementById(prefixNext+questionIndex).style.display = "inline";
+            }
+            else {
+              document.getElementById(prefixResKo+questionIndex).style.display = "inline";
+            }
+          });
+        }
+      }
+
+    </script>
+  </body>
+</html>
