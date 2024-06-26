@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>...</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/flipdown.min.css" />
+    <style>
+      .text {
+          font-size: 40px;
+          color: #297791;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="page">
+      <div id="defi">
+        <p>
+          Hello les futurs mariés!
+        </p>
+        <p>
+          Vous pensiez qu'on vous avait oublié!? Eh bien non! Nous voici pour 
+          un nouveau défi! Prêt!?
+        </p>
+        <p>
+          Racontez-vous vos différents logements... Guichen, Orgères, Corps-nuds, Noyal, Hennebont (ah non, faux départ!) et enfin Nouvoitou 👌
+        </p>
+        <p>
+          Allez là où vous avez vécu et ayez quand même une petite pensée pour Hennebont!
+        </p>
+        <p>
+          Vous avez jusqu'au dimanche 07/07!! Tic tac, tic tac...
+        </p>
+      </div>
+      <br />
+      <br />
+      <div id="fini">Temps écoulé, défi terminé !!</div>
+      <div id="flipdown" class="flipdown"></div>
+    <script type="text/javascript" src="js/flipdown.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const target = 1720382400; // https://www.epochconverter.com
+        const now = (new Date().getTime() / 1000) + 1;
+
+        // Si depasse
+        if(now - target > 0) {
+          document.getElementById('fini').style.display = 'block';
+        }
+        else {
+          // Set up FlipDown
+          var flipdown = new FlipDown(target, {
+            headings: ["Jours", "Heures", "Minutes", "Secondes"],
+          })
+            // Start the countdown
+            .start()
+            // Do something when the countdown ends
+            .ifEnded(() => {
+              console.log('C\'est fini !');
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
